@@ -30,7 +30,26 @@ public class diff2history {
 			e.printStackTrace();
 		}
 		if (d2h.commits != null) {
-			
+			for (File commit : d2h.commits) { //for each commit(file)
+				BufferedReader reader = new BufferedReader(new FileReader(commit));
+				String line = null;
+				boolean s2 = false;
+				while ((line = reader.readLine()) != null) {
+					if (line.startWith("diff") && line.endWith("pom.xml")) { //!!!!!!!!!!!
+						s2 = true;
+						line = reader.readLine();
+						break;
+					}
+				}
+				if (s2) {
+					while (line != null && !line.startWith("diff")) {
+						if (line.substring("")) {//?????
+						}
+						if (line.substring("")) {
+						}
+					}
+				}
+			}
 		}
 
 	}
